@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.hidden{
+.hidden {
   display: none !important
 }
 
@@ -29,15 +29,40 @@
   width: 77%;
 }
 
-.nav-link{
+.nav-link {
   list-style: none;
 }
 
-.nav-link li{
-   margin: 20px 0;
+.nav-link li {
+  margin: 20px 0;
   border-bottom: 1px solid black;
   font-size: 23px;
   cursor: pointer;
   padding: 10px 20px;
   padding-bottom: 30px;
+}
+
+.expense {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  border: 1px solid gainsboro;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expense-amount,
+.expense-category {
+  font-size: 40px;
+}
+
+#expense-container {
+  margin-top: 70px;
+}
+
+#all-expense-page{
+  padding: 30px;
 }
