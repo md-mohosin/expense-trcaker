@@ -9,10 +9,17 @@ function hide(id) {
 document.getElementById("add-expense-link").addEventListener("click", () => {
     show("add-expense-page")
     hide("all-expense-page")
+    hide("category-wise-totals-page")
 })
 document.getElementById("all-expense-link").addEventListener("click", () => {
     show("all-expense-page")
     hide("add-expense-page")
+    hide("category-wise-totals-page")
+})
+document.getElementById("category-wise-totals-link").addEventListener("click",()=>{
+    show("category-wise-totals-page")
+    hide("add-expense-page")
+    hide("all-expense-page")
 })
 
 
@@ -43,6 +50,7 @@ document.getElementById("add-expense-btn").addEventListener("click", e => {
 
 
 const expenseContainer = document.getElementById("expense-container")
+const categoryTotalContainer = document.getElementById("category-total-container")
 
 function renderExpense() {
     expenseContainer.innerHTML = ''
@@ -58,8 +66,42 @@ function renderExpense() {
         expenseContainer.appendChild(div)
     })
 
+    const total = expenses.reduce((sum, item) => sum + item.amount, 0)
+    document.getElementById("total-expense").innerText = total
 
-    const total = expenses.reduce((sum,item)=>sum + item.amount,0)
-    document.getElementById("total-expense").innerText=total
+  const groupedExpenses = groupByCategory(expenses)
 
+
+  categoryTotalContainer.innerHTML=''
+
+  Object.entries(groupedExpenses).forEach(([category,total]) =>{
+    const div = document.createElement("div")
+    div.innerHTML = `
+    <div class="category-total">
+    <p>${category}</p>
+    <p>${total}</p>
+    </div>
+    `
+    categoryTotalContainer.appendChild(div)
+  })
+}
+
+
+
+
+
+
+function groupByCategory(expenses) {
+  return  expenses.reduce((obj, expense) => {
+        const category = expense.category;
+        const amount = expense.amount;
+
+        if (obj[category]) {
+            obj[category] = obj[category] + amount
+        }
+        else {
+            obj[category] = amount
+        }
+        return obj
+    }, {})
 }
