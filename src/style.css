@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hidden{
+  display: none !important
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  max-height: auto;
+  background-color: white;
+  border: 1px solid red;
+  display: flex;
+}
+
+.sidebar {
+  border: 3px solid blue;
+  width: 23%;
+  background-color: gray;
+  color: black;
+}
+
+.content {
+  border: 3px solid yellowgreen;
+  width: 77%;
+}
+
+.nav-link{
+  list-style: none;
+}
+
+.nav-link li{
+   margin: 20px 0;
+  border-bottom: 1px solid black;
+  font-size: 23px;
+  cursor: pointer;
+  padding: 10px 20px;
+  padding-bottom: 30px;
+}

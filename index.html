@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+
+  <section class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <ul class="nav-link">
+        <li>Home</li>
+        <li id="all-expense-link">All Expense</li>
+        <li id="add-expense-link">Add Expense</li>
+      </ul>
+    </div>
+
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <!-- ALL EXPENSE -->
+      <div class="hidden" id="all-expense-page">
+        <h1>All expense</h1>
+        <div id="expense-container">
+
+        </div>
+      </div>
+
+
+      <!-- ADD EXPENSE -->
+      <div class="hidden" id="add-expense-page"
+        style="display: flex; justify-content: center;align-items: center;height: 100%;flex-direction: column;">
+        <h1>Add your expense</h1>
+        <form style="width: 50%;">
+          <div>
+            <label style="font-size: 24px;" for="">Amount</label>
+            <input style="width: 100%; margin-bottom: 30px; padding: 13px; border-radius: 10px; font-size: 20px;"
+              type="number" name="" id="amount-input">
+          </div>
+          <div>
+            <label style="font-size: 24px;" for="">Category</label>
+            <select style="width: 100%;margin-bottom: 30px;  padding: 13px; border-radius: 10px; font-size: 20px;"
+              name="" id="category">
+              <option value="food">Food</option>
+              <option value="travel">Travel</option>
+            </select>
+          </div>
+          <button id="add-expense-btn"
+            style="width: 100%; padding: 13px; border-radius: 10px; font-size: 20px; margin-top: 10px;">Add</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="./src/expense.js"></script>
+</body>
+
+</html>
