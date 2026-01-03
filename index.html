@@ -15,8 +15,7 @@
     <!-- SIDEBAR -->
     <div class="sidebar">
       <ul class="nav-link">
-        <li>Home</li>
-        <li id="all-expense-link">All Expense</li>
+        <li id="all-expense-link">Expenses</li>
         <li id="add-expense-link">Add Expense</li>
         <li id="category-wise-totals-link">Category-wise Totals</li>
       </ul>
@@ -27,8 +26,8 @@
     <div class="content">
 
       <!-- ALL EXPENSE -->
-      <div class="hidden" id="all-expense-page">
-        <h1>Total Expense: <span id="total-expense">0</span></h1>
+      <div id="all-expense-page">
+        <h1>Total Expense: <span id="total-expense">$0</span></h1>
         <div id="expense-container">
 
         </div>
@@ -36,18 +35,16 @@
 
 
       <!-- ADD EXPENSE -->
-      <div class="hidden" id="add-expense-page"
-        style="display: flex; justify-content: center;align-items: center;height: 100%;flex-direction: column;">
-        <h1 style="font-size: 60px;">Add your expense</h1>
-        <form style="width: 50%;">
+      <div class="hidden" id="add-expense-page">
+        <h1 class="add-expense-title">Add your expense</h1>
+        <form class="add-expense-form">
           <div>
-            <label style="font-size: 24px;" for="">Amount</label>
-            <input style="width: 100%; margin-bottom: 30px; padding: 13px; border-radius: 10px; font-size: 20px;"
-              type="number" name="" id="amount-input">
+            <label>Amount</label>
+            <input type="number" name="" id="amount-input">
           </div>
           <div>
-            <label style="font-size: 24px;" for="">Category</label>
-            <select style="width: 100%;margin-bottom: 30px;  padding: 13px; border-radius: 10px; font-size: 20px;"
+            <label>Category</label>
+            <select
               name="" id="category">
               <option value="food">Food</option>
               <option value="travel">Travel</option>
@@ -57,8 +54,7 @@
               <option value="internet">Internet</option>
             </select>
           </div>
-          <button id="add-expense-btn"
-            style="width: 100%; padding: 13px; border-radius: 10px; font-size: 20px; margin-top: 10px;">Add</button>
+          <button id="add-expense-btn">Add</button>
         </form>
       </div>
 
@@ -67,7 +63,6 @@
       <!-- CATEGORY-WISE TOTALS -->
       <div class="hidden" id="category-wise-totals-page">
         <div id="category-total-container">
-          <h1>Category wise total</h1>
         </div>
       </div>
 

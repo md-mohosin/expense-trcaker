@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Inter;
 }
 
 .hidden {
@@ -13,19 +17,16 @@
   min-height: 100vh;
   max-height: auto;
   background-color: white;
-  border: 1px solid red;
   display: flex;
 }
 
 .sidebar {
-  border: 3px solid blue;
   width: 23%;
   background-color: gray;
   color: black;
 }
 
 .content {
-  border: 3px solid yellowgreen;
   width: 77%;
 }
 
@@ -63,6 +64,160 @@
   margin-top: 70px;
 }
 
-#all-expense-page{
+#all-expense-page {
   padding: 30px;
+}
+
+.category-total {
+  border: 1px solid gainsboro;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 23px;
+  width: 50%;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+#category-total-container {
+  margin-top: 60px;
+}
+
+
+#add-expense-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.add-expense-title {
+  font-size: 60px;
+}
+
+.add-expense-form {
+  width: 50%;
+}
+
+
+input[type="number"],
+select#category {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.add-expense-form label {
+  font-size: 24px;
+}
+
+
+#add-expense-btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 10px;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border: 1px solid blueviolet;
+}
+
+#add-expense-btn:hover {
+  background-color: transparent;
+  color: blueviolet;
+  border: 1px solid blueviolet;
+}
+
+
+
+@media (max-width:1300px) {
+  .content {
+    width: 100%;
+  }
+  
+  .category-total,.expense{
+    width: 90%;
+  }
+
+  .add-expense-form {
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+  }
+}
+
+
+
+
+
+@media (max-width:900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .nav-link {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .nav-link li {
+    font-size: 13px;
+    padding: 5px;
+    border: none;
+    margin: 10px;
+  }
+
+  .add-expense-title {
+    font-size: 35px;
+  }
+
+  .add-expense-form {
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+  }
+
+  .add-expense-form label {
+    font-size: 20px;
+  }
+
+  #add-expense-page {
+    margin-top: 40px;
+  }
+
+  input[type="number"],
+  select#category {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .category-total,.expense{
+    width: 90%;
+  }
+
+  #all-expense-page{
+  padding: 10px;
+  }
+
+  .expense-amount,
+.expense-category {
+  font-size: 20px;
+}
+
 }
